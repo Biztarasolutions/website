@@ -119,6 +119,9 @@ if (aboutStats) {
     statsObserver.observe(aboutStats);
 }
 
+// Initialize EmailJS
+emailjs.init('4rccEu1UeFvdZBaL3');
+
 // Contact form handling
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -133,11 +136,21 @@ if (contactForm) {
         
         // Get form data
         const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData.entries());
+        const templateParams = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            company: formData.get('company'),
+            service: formData.get('service'),
+            message: formData.get('message')
+        };
         
         try {
-            // Simulate form submission (replace with actual endpoint)
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            // Send email using EmailJS
+            const response = await emailjs.send(
+                'service_a3gfvyg',
+                'template_pls1p44',
+                templateParams
+            );
             
             // Show success message
             showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
