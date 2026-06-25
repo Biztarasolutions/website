@@ -297,30 +297,17 @@ document.querySelectorAll('.service-card').forEach(card => {
     });
 });
 
-// Typing animation for hero title
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.textContent = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Initialize typing animation when page loads
+// Hero title fade-in on page load
 document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 30);
-        }, 500);
+        heroTitle.style.opacity = '0';
+        heroTitle.style.transform = 'translateY(10px)';
+        heroTitle.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        requestAnimationFrame(() => {
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        });
     }
 });
 
@@ -389,37 +376,15 @@ if (savedTheme === 'dark') {
 const scrollToTopBtn = document.createElement('button');
 scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 scrollToTopBtn.className = 'scroll-to-top';
-scrollToTopBtn.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border: none;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
 
 document.body.appendChild(scrollToTopBtn);
 
 // Show/hide scroll to top button
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-        scrollToTopBtn.style.opacity = '1';
-        scrollToTopBtn.style.visibility = 'visible';
+        scrollToTopBtn.classList.add('visible');
     } else {
-        scrollToTopBtn.style.opacity = '0';
-        scrollToTopBtn.style.visibility = 'hidden';
+        scrollToTopBtn.classList.remove('visible');
     }
 });
 
