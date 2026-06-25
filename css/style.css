@@ -646,6 +646,7 @@ body {
 .icon-4 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
 .icon-5 { background: linear-gradient(135deg, #fa709a, #fee140); }
 .icon-6 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+.icon-7 { background: linear-gradient(135deg, #0ea5e9, #2563eb); }
 
 .service-card h3 {
     font-size: 1.15rem;
@@ -1146,20 +1147,22 @@ body {
 
 .founders-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     margin-bottom: 48px;
 }
 
 .founder-card {
     background: white;
     border-radius: var(--radius);
-    padding: 36px;
+    padding: 36px 28px;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border);
     display: flex;
-    gap: 28px;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
     transition: var(--transition);
 }
 
@@ -1191,6 +1194,10 @@ body {
 
 .avatar-initials.ri {
     background: var(--grad-accent);
+}
+
+.avatar-initials.ma {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
 }
 
 .founder-badge-icon {
@@ -1241,6 +1248,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    justify-content: center;
 }
 
 .founder-skills span {
@@ -1763,6 +1771,105 @@ body {
 }
 
 /* =============================================
+   PROMISE BAND
+   ============================================= */
+.promise {
+    background: var(--dark);
+    color: white;
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.promise::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -8%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(102,126,234,0.28), transparent 70%);
+    pointer-events: none;
+}
+
+.promise-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.section-badge.light {
+    background: rgba(255,255,255,0.10);
+    color: #c7d2fe;
+    border-color: rgba(255,255,255,0.20);
+}
+
+.promise-text h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+}
+
+.promise-text p {
+    color: rgba(255,255,255,0.72);
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+.promise-points {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.promise-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    transition: var(--transition);
+}
+
+.promise-point:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateX(4px);
+}
+
+.pp-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--grad);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.promise-point h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: white;
+}
+
+.promise-point p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 @media (max-width: 1024px) {
@@ -1804,6 +1911,9 @@ body {
     .portfolio-grid { grid-template-columns: 1fr; }
     .portfolio-card.featured { grid-column: auto; }
     .mockup-kpi-row { grid-template-columns: repeat(2, 1fr); }
+
+    .promise-inner { grid-template-columns: 1fr; gap: 36px; }
+    .promise-text h2 { font-size: 2rem; }
 
     .about-content { grid-template-columns: 1fr; gap: 40px; }
     .about-text .section-title { text-align: center; }
