@@ -1200,6 +1200,17 @@ body {
     background: linear-gradient(135deg, #0ea5e9, #2563eb);
 }
 
+.avatar-photo {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid white;
+    box-shadow: var(--shadow-purple);
+    display: block;
+}
+
 .founder-badge-icon {
     position: absolute;
     bottom: -2px;
