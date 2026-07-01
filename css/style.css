@@ -1261,6 +1261,31 @@ body {
     border-radius: 50px;
 }
 
+.founder-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #0a66c2;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid rgba(10,102,194,0.25);
+    border-radius: 50px;
+    background: rgba(10,102,194,0.06);
+    transition: var(--transition);
+}
+
+.founder-linkedin:hover {
+    background: #0a66c2;
+    color: white;
+    border-color: #0a66c2;
+    transform: translateY(-2px);
+}
+
+.founder-linkedin i { font-size: 15px; }
+
 /* Team intro */
 .team-intro {
     background: white;
