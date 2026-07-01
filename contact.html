@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - BizTara Solutions</title>
+    <meta name="description" content="Get in touch with BizTara Solutions. Book a free 30-minute consultation or send us a message — we typically reply within 4 business hours.">
+    <meta name="keywords" content="contact BizTara, book consultation, data analytics consultation, AI chatbot inquiry, schedule a call">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://biztarasolutions.com/contact.html">
+    <meta property="og:title" content="Contact - BizTara Solutions">
+    <meta property="og:description" content="Book a free consultation or send us a message — let's talk about growing your business.">
+    <meta property="og:site_name" content="BizTara Solutions">
+
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="canonical" href="https://biztarasolutions.com/contact.html">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="44" height="44" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea"/>
+                                <stop offset="100%" style="stop-color:#764ba2"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="25" cy="25" r="22" fill="url(#navLogoGrad)"/>
+                        <path d="M14 32 L20 24 L26 28 L32 18" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="20" cy="24" r="2" fill="#ffffff"/>
+                        <circle cx="26" cy="28" r="2" fill="#ffffff"/>
+                        <circle cx="32" cy="18" r="2" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <span class="company-name">BizTara Solutions</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="work.html" class="nav-link">Our Work</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="section-badge">Get In Touch</div>
+            <h1>Let's Start the Conversation</h1>
+            <p>Tell us about your business and what you are trying to solve — or grab a free 30-minute slot on our calendar. We typically reply within 4 business hours.</p>
+        </div>
+    </section>
+
+    <!-- Calendly Embed -->
+    <section id="booking-embed" class="booking-embed">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Book a Free Consultation</h2>
+                <p class="section-subtitle">Pick a time that works for you — no cost, no obligation</p>
+            </div>
+            <div class="booking-embed-inner">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/biztarasolutions" style="min-width:320px;height:700px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Prefer to Write?</div>
+                <h2 class="section-title">Send Us a Message</h2>
+                <p class="section-subtitle">
+                    Tell us about your business and what you are trying to solve — we will suggest the right solution
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>biztarasolutions@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Remote consultations worldwide · India based</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Response Time</h4>
+                            <p>We typically reply within 4 business hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91 9876543210">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Your company name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">What are you looking for?</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="AI Chatbot & Automation">AI Chatbot & Automation</option>
+                                <option value="Power BI Dashboard">Power BI Dashboard</option>
+                                <option value="Inventory Management">Inventory Management</option>
+                                <option value="Customer Analytics">Customer Analytics</option>
+                                <option value="Custom Web App or Tool">Custom Web App or Tool</option>
+                                <option value="Business Growth Solutions">Business Growth Solutions</option>
+                                <option value="Strategic Consulting">Strategic Consulting</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell us about your challenge</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Describe what you are trying to solve or improve in your business..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <svg width="36" height="36" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea"/>
+                                    <stop offset="100%" style="stop-color:#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="25" cy="25" r="22" fill="url(#footerLogoGrad)"/>
+                            <path d="M14 32 L20 24 L26 28 L32 18" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="20" cy="24" r="2" fill="#ffffff"/>
+                            <circle cx="26" cy="28" r="2" fill="#ffffff"/>
+                            <circle cx="32" cy="18" r="2" fill="#ffffff"/>
+                        </svg>
+                        <span>BizTara Solutions</span>
+                    </div>
+                    <p class="footer-description">
+                        Transforming businesses through data intelligence, AI solutions, and smart automation.
+                        Founded by Rishabh & Rishika Jain.
+                    </p>
+                    <p class="footer-email">biztarasolutions@gmail.com</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">AI Chatbots & Automation</a></li>
+                        <li><a href="services.html">Power BI Dashboards</a></li>
+                        <li><a href="services.html">Inventory Management</a></li>
+                        <li><a href="services.html">Customer Analytics</a></li>
+                        <li><a href="services.html">Custom Web Apps</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Meet the Team</a></li>
+                        <li><a href="work.html">Our Work</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html#booking-embed">Schedule a Call</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 BizTara Solutions. All rights reserved.</p>
+                <p class="footer-tagline">Data · AI · Growth</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+</body>
+</html>

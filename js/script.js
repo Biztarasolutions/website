@@ -119,8 +119,10 @@ if (aboutStats) {
     statsObserver.observe(aboutStats);
 }
 
-// Initialize EmailJS
-emailjs.init('4rccEu1UeFvdZBaL3');
+// Initialize EmailJS (only on pages where the library is loaded)
+if (typeof emailjs !== 'undefined') {
+    emailjs.init('4rccEu1UeFvdZBaL3');
+}
 
 // Contact form handling
 if (contactForm) {

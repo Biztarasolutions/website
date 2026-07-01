@@ -1870,6 +1870,58 @@ body {
 }
 
 /* =============================================
+   MULTI-PAGE NAV + PAGE HERO
+   ============================================= */
+.nav-logo { text-decoration: none; cursor: pointer; }
+
+.nav-link.active { color: var(--primary); }
+.nav-link.active::after { width: 100%; }
+
+/* Offset anchor targets so the fixed navbar doesn't overlap them */
+section[id] { scroll-margin-top: 84px; }
+
+.page-hero {
+    padding: 140px 0 70px;
+    background: linear-gradient(135deg, #f5f7ff 0%, #edf0fb 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 82% 18%, rgba(102,126,234,0.12), transparent 55%);
+    pointer-events: none;
+}
+
+.page-hero .container { position: relative; z-index: 1; }
+
+.page-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 660px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Centered CTA below a section (e.g. home teaser) */
+.section-cta {
+    text-align: center;
+    margin-top: 44px;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 @media (max-width: 1024px) {
@@ -1914,6 +1966,9 @@ body {
 
     .promise-inner { grid-template-columns: 1fr; gap: 36px; }
     .promise-text h2 { font-size: 2rem; }
+
+    .page-hero { padding: 116px 0 52px; }
+    .page-hero h1 { font-size: 2.1rem; }
 
     .about-content { grid-template-columns: 1fr; gap: 40px; }
     .about-text .section-title { text-align: center; }
